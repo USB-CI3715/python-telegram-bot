@@ -24,7 +24,7 @@ import contextlib
 import copy
 import pickle
 from collections.abc import Sequence
-from datetime import datetime
+import datetime as dtm
 from types import TracebackType
 from typing import (
     TYPE_CHECKING,
@@ -3754,7 +3754,7 @@ class Bot(TelegramObject, contextlib.AbstractAsyncContextManager["Bot"]):
         self,
         chat_id: Union[str, int],
         user_id: int,
-        until_date: Optional[Union[int, datetime]] = None,
+        until_date: Optional[Union[int, dtm.datetime]] = None,
         revoke_messages: Optional[bool] = None,
         *,
         read_timeout: ODVInput[float] = DEFAULT_NONE,
@@ -5392,7 +5392,7 @@ class Bot(TelegramObject, contextlib.AbstractAsyncContextManager["Bot"]):
         chat_id: Union[str, int],
         user_id: int,
         permissions: ChatPermissions,
-        until_date: Optional[Union[int, datetime]] = None,
+        until_date: Optional[Union[int, dtm.datetime]] = None,
         use_independent_chat_permissions: Optional[bool] = None,
         *,
         read_timeout: ODVInput[float] = DEFAULT_NONE,
@@ -5731,7 +5731,7 @@ class Bot(TelegramObject, contextlib.AbstractAsyncContextManager["Bot"]):
     async def create_chat_invite_link(
         self,
         chat_id: Union[str, int],
-        expire_date: Optional[Union[int, datetime]] = None,
+        expire_date: Optional[Union[int, dtm.datetime]] = None,
         member_limit: Optional[int] = None,
         name: Optional[str] = None,
         creates_join_request: Optional[bool] = None,
@@ -5809,7 +5809,7 @@ class Bot(TelegramObject, contextlib.AbstractAsyncContextManager["Bot"]):
         self,
         chat_id: Union[str, int],
         invite_link: Union[str, "ChatInviteLink"],
-        expire_date: Optional[Union[int, datetime]] = None,
+        expire_date: Optional[Union[int, dtm.datetime]] = None,
         member_limit: Optional[int] = None,
         name: Optional[str] = None,
         creates_join_request: Optional[bool] = None,
@@ -7056,7 +7056,7 @@ CUSTOM_EMOJI_IDENTIFIER_LIMIT` custom emoji identifiers can be specified.
         explanation: Optional[str] = None,
         explanation_parse_mode: ODVInput[str] = DEFAULT_NONE,
         open_period: Optional[int] = None,
-        close_date: Optional[Union[int, datetime]] = None,
+        close_date: Optional[Union[int, dtm.datetime]] = None,
         explanation_entities: Optional[Sequence["MessageEntity"]] = None,
         protect_content: ODVInput[bool] = DEFAULT_NONE,
         message_thread_id: Optional[int] = None,
