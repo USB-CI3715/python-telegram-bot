@@ -179,9 +179,7 @@ class ChatMemberUpdated(TelegramObject):
         self,
     ) -> dict[
         str,
-        tuple[
-            Union[str, bool, dtm.datetime, User], Union[str, bool, dtm.datetime, User]
-        ],
+        tuple[Union[str, bool, dtm.datetime, User], Union[str, bool, dtm.datetime, User]],
     ]:
         """Computes the difference between :attr:`old_chat_member` and :attr:`new_chat_member`.
 
